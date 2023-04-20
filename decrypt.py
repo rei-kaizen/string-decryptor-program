@@ -2,13 +2,18 @@
 class Decryptor:
     #define a method for decrypting a string
     def decrypt(self):
+        """Prompts the user for an encrypted string then replaces the sumbols
+        to their corresponding letters to generate the decrypted string."""
         #ask for string to be decrypted
         encrypted_string = input("Enter a string to decrypt: ")
-
-        return encrypted_string
+        #replace all the encrypted characters
+        decrypted_string = encrypted_string.replace('*', 'a') \
+                                            .replace('&', 'e') \
+                                            .replace('#', 'i') \
+                                            .replace('+', 'o') \
+                                            .replace('!', 'u')        
+        return decrypted_string
     
-#create an instance of the class    
 instance = Decryptor()
-#to get the user input and return it
-instance.decrypt()
-
+#display the output
+print("The plain text: " +  instance.decrypt())
