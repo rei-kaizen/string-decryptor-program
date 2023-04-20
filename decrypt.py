@@ -14,6 +14,5 @@ class Decryptor:
                                             .replace('!', 'u')        
         return decrypted_string
     
-instance = Decryptor()
 #display the output
-print("The plain text: " +  instance.decrypt())
+print("The plain text: " +  Decryptor().decrypt())
