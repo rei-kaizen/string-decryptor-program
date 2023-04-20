@@ -1,3 +1,5 @@
+from tkinter import *
+
 #define a class to decrypt string
 class Decryptor:
     #define a method for decrypting a string
@@ -16,3 +18,15 @@ class Decryptor:
     
 #display the output
 print("The plain text: " +  Decryptor().decrypt())
+
+#build a GUI for the Decryptor 
+class Interface:
+    def __init__(self):
+        """Initializes the interface window and runs the main loop."""
+        self.root = Tk()
+        self.root.geometry("590x370")
+        self.root.title("String Decryptor")
+        
+        self.root.mainloop()
+
+Interface()
