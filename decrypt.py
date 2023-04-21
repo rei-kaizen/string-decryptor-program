@@ -7,8 +7,6 @@ class Decryptor:
         """Prompts the user for an encrypted string then replaces the sumbols
         to their corresponding letters to generate the decrypted string."""
         #replace all the encrypted characters
-        #ask for string to be decrypted
-        # encrypted_string = input("Enter a string to decrypt: ")
         decrypted_string = encrypted_string.replace('*', 'a') \
                                             .replace('&', 'e') \
                                             .replace('#', 'i') \
@@ -16,9 +14,6 @@ class Decryptor:
                                             .replace('!', 'u')        
         return decrypted_string
     
-#display the output
-#print("The plain text: " +  Decryptor().decrypt()) 
-   
 #build a GUI for the Decryptor 
 class Interface:
     def __init__(self):
@@ -45,11 +40,22 @@ class Interface:
         output_label.place(x=305, y=70)
 
         #embed buttons for decrypt and reset methods
-        decrypt_button = Button(whole_frame, text="Decrypt", relief=RIDGE, borderwidth=3, font = ("verdana 10 bold"), bg="#4676c9", fg="white")
+        decrypt_button = Button(whole_frame, text="Decrypt", relief=RIDGE, borderwidth=3, font = ("verdana 10 bold"), bg="#4676c9", fg="white", command=self.decrypt)
         decrypt_button.place(x=210, y=300)
         reset_button = Button(whole_frame, text="Reset", relief=RIDGE, borderwidth=3, font = ("verdana 10 bold"), bg="#4676c9", fg="white")
         reset_button.place(x=300, y=300)
 
+        #initialize Decryptor classr 
+        self.string_decryptor = Decryptor()        
         self.root.mainloop()
+
+    def decrypt(self):
+        """Retrieve the text from the input box, strip any leading/trailing 
+        whitespace, and pass it to the Decryptor instance to get the decrypted 
+        string. Then, clear the output box to insert the decrypted string."""
+        input_box = self.input_box.get("1.0", END).strip()
+        output_box = self.string_decryptor.decrypt(input_box)
+        self.output_box.delete("1.0", END)
+        self.output_box.insert(END, output_box)    
 
 Interface()
