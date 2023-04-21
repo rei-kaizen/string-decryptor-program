@@ -44,6 +44,12 @@ class Interface:
         output_label = Label(self.root, text="Decrypted Text", font = ("Helvetica 12 bold"), fg="gray", bg="#1c1c1c")
         output_label.place(x=305, y=70)
 
+        #embed buttons for decrypt and reset methods
+        decrypt_button = Button(whole_frame, text="Decrypt", relief=RIDGE, borderwidth=3, font = ("verdana 10 bold"), bg="#4676c9", fg="white")
+        decrypt_button.place(x=210, y=300)
+        reset_button = Button(whole_frame, text="Reset", relief=RIDGE, borderwidth=3, font = ("verdana 10 bold"), bg="#4676c9", fg="white")
+        reset_button.place(x=300, y=300)
+
         self.root.mainloop()
 
 Interface()
