@@ -4,6 +4,8 @@ This repository is for string decryptor gui that will accept a string as encrypt
 <br><br>
 'a' = *, 'e' = & , 'i' = # , 'o' = + 'u' = !
 
+![img](string-decryptor-demo.png)
+
 ## Documentation
 
 Some basic info about the methods defined in the Decryptor and Interface class
