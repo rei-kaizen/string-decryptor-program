@@ -42,7 +42,7 @@ class Interface:
         #embed buttons for decrypt and reset methods
         decrypt_button = Button(whole_frame, text="Decrypt", relief=RIDGE, borderwidth=3, font = ("verdana 10 bold"), bg="#4676c9", fg="white", command=self.decrypt)
         decrypt_button.place(x=210, y=300)
-        reset_button = Button(whole_frame, text="Reset", relief=RIDGE, borderwidth=3, font = ("verdana 10 bold"), bg="#4676c9", fg="white")
+        reset_button = Button(whole_frame, text="Reset", relief=RIDGE, borderwidth=3, font = ("verdana 10 bold"), bg="#4676c9", fg="white", command=self.reset)
         reset_button.place(x=300, y=300)
 
         #initialize Decryptor classr 
@@ -56,6 +56,11 @@ class Interface:
         input_box = self.input_box.get("1.0", END).strip()
         output_box = self.string_decryptor.decrypt(input_box)
         self.output_box.delete("1.0", END)
-        self.output_box.insert(END, output_box)    
+        self.output_box.insert(END, output_box)
+
+    def reset(self):
+        """Clears the contents of input and output on its text boxes."""
+        self.input_box.delete("1.0", END)
+        self.output_box.delete("1.0", END)
 
 Interface()
