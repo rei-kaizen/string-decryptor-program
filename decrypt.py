@@ -29,6 +29,11 @@ class Interface:
         #set the frame for whole background appearance 
         whole_frame= Frame(self.root, width=590, height=370, relief=RIDGE, borderwidth=5, bg="#1c1c1c")
         whole_frame.place(x=0, y=0)
+        #create text boxes for the input and output
+        self.input_box = Text(whole_frame,  width=20, height=7, relief=RIDGE, borderwidth=5, font = ("verdana", 15), fg="white", bg="black")
+        self.input_box.place(x=10, y=100)        
+        self.output_box = Text(whole_frame,  width=20, height=7, relief=RIDGE, borderwidth=5, font = ("verdana", 15), fg="white", bg="black")
+        self.output_box.place(x=300, y=100)
 
         self.root.mainloop()
 
