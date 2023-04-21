@@ -26,14 +26,23 @@ class Interface:
         self.root = Tk()
         self.root.geometry("590x370")
         self.root.title("String Decryptor")
+
         #set the frame for whole background appearance 
         whole_frame= Frame(self.root, width=590, height=370, relief=RIDGE, borderwidth=5, bg="#1c1c1c")
         whole_frame.place(x=0, y=0)
+
         #create text boxes for the input and output
         self.input_box = Text(whole_frame,  width=20, height=7, relief=RIDGE, borderwidth=5, font = ("verdana", 15), fg="white", bg="black")
         self.input_box.place(x=10, y=100)        
         self.output_box = Text(whole_frame,  width=20, height=7, relief=RIDGE, borderwidth=5, font = ("verdana", 15), fg="white", bg="black")
         self.output_box.place(x=300, y=100)
+        
+        #affix labels to their designated places
+        Label(self.root, text="String Decryptor", font = ("Helvetica 20 bold"), fg="#2986cc", bg="#1c1c1c").pack(pady=10, padx=10)
+        input_label = Label(self.root, text="Enter a string to decrypt", font = ("Helvetica 12 bold"), fg="gray", bg="#1c1c1c")
+        input_label.place(x=13, y=70)
+        output_label = Label(self.root, text="Decrypted Text", font = ("Helvetica 12 bold"), fg="gray", bg="#1c1c1c")
+        output_label.place(x=305, y=70)
 
         self.root.mainloop()
 
