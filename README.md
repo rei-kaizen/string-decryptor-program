@@ -1,3 +1,9 @@
+# Decryption of strings
+
+This repository is for string decryptor gui that will accept a string as encrypted text and then the program will decrypt it using the following character substitute:
+<br><br>
+'a' = *, 'e' = & , 'i' = # , 'o' = + 'u' = !
+
 ## Documentation
 
 Some basic info about the methods defined in the Decryptor and Interface class
